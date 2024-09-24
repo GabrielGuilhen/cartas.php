@@ -71,7 +71,13 @@ function jogar()
 
     do {
         exibirBaralho($baralho);
-        $palpite = readline("\nEscolha um carro pelo número correspondente: ");
+        $palpite = readline("\nEscolha um carro pelo número correspondente ou Digite 0 para desistir: ");
+
+        if($palpite == '0'){
+            echo "Você desistiu do jogo. A carta sorteada era: ";
+            exibirCarta($carroSorteado);
+            break;
+        }
 
         if($palpite==$indiceSorteado){
             echo"Acertou!!!";
@@ -80,6 +86,8 @@ function jogar()
         }else {
             echo"Errou Burrooo, tenta denovo\n";
         }
+    }while(true);
+}       
 
   
 jogar();
